@@ -6,9 +6,7 @@ import ReactMarkdown from "react-markdown";
 import { useFetchSingleJobs } from "./useFetchJobs";
 
 function JobDetails({ match }) {
-  console.log({ id: match.params.id });
   const { job, loading, error } = useFetchSingleJobs(match.params.id);
-  console.log({ job });
   return (
     <>
       <Card className="mb-3">

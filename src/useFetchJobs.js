@@ -1,17 +1,12 @@
 import { useReducer, useEffect } from "react";
 import axios from "axios";
+import {BASE_GITHUB_URL} from './requests'
+import { ACTIONS } from "./Actions";
 
-const ACTIONS = {
-  MAKE_REQUEST: "make-request",
-  GET_DATA: "get-data",
-  ERROR: "error",
-  UPDATE_HAS_NEXT_PAGE: "update-has-next-page",
-  MAKE_SINGLE_REQUEST: "nake-single-request",
-  SINGLE_DATA: "single-data",
-};
-const BASE_URL = "https://cors-anywhere.herokuapp.com/https://jobs.github.com/";
+const BASE_URL = BASE_GITHUB_URL;
 const GET_JOBS = `${BASE_URL}positions.json`;
 const SINGLE_URL = `${BASE_URL}positions/`;
+
 function reducer(state, action) {
   switch (action.type) {
     case ACTIONS.MAKE_REQUEST:
