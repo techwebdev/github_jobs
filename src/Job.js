@@ -2,8 +2,9 @@ import React from "react";
 import { Card, Badge, Button } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 
-export default function Job({ job }) {
+function Job({ job }) {
 
   return (
     <Card className="mb-3">
@@ -43,3 +44,19 @@ export default function Job({ job }) {
     </Card>
   );
 }
+
+Job.propTypes = {
+  job: propTypes.shape({
+    title: propTypes.string.isRequired,
+    company: propTypes.string.isRequired,
+    created_at: propTypes.any.isRequired,
+    location: propTypes.string,
+    how_to_apply: propTypes.any,
+    company_logo: propTypes.string,
+    id:propTypes.number,
+  }),
+};
+
+
+export default Job
+
