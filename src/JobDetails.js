@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 
 import ReactMarkdown from "react-markdown";
 import { useFetchSingleJobs } from "./useFetchJobs";
@@ -58,5 +59,10 @@ function JobDetails({ match }) {
     </>
   );
 }
+
+
+JobDetails.propTypes = {
+  match:propTypes.any,
+};
 
 export default JobDetails;

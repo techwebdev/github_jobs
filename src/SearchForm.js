@@ -1,7 +1,8 @@
 import React from 'react'
 import { Form, Col } from 'react-bootstrap'
+import propTypes from "prop-types";
 
-export default function SearchForm({ params, onParamChange }) {
+function SearchForm({ params, onParamChange }) {
   return (
     <Form className="mb-4">
       <Form.Row className="align-items-end">
@@ -20,3 +21,11 @@ export default function SearchForm({ params, onParamChange }) {
     </Form>
   )
 }
+
+SearchForm.propTypes = {
+  params: propTypes.string,
+  onParamChange:propTypes.func
+};
+
+export default SearchForm;
+
