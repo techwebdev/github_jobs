@@ -1,7 +1,8 @@
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
+import propTypes from "prop-types";
 
-export default function JobsPagination({ page, setPage, hasNextPage }) {
+ function JobsPagination({ page, setPage, hasNextPage }) {
   function adjustPage(amount) {
     setPage(prevPage => prevPage + amount)
   }
@@ -18,3 +19,12 @@ export default function JobsPagination({ page, setPage, hasNextPage }) {
     </Pagination>
   )
 }
+
+
+JobsPagination.propTypes = {
+  page: propTypes.number.isRequired,
+  setPage:propTypes.func,
+  hasNextPage:propTypes.bool
+};
+
+export default JobsPagination;
